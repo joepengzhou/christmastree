@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Prototype 3 | Make Christmas Tree Decoration Fun!</title>
+<meta name="description" content="A description of the page.">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+<!-- Sets whether a web application runs in full-screen mode. -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<!-- Use this to enable media queries and disable zoomimg on mobile -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<!-- Enable search engine to index this page and follow links, replace with no-index or no-follow to disable -->
+<meta name="robots" content="index, follow">
+
+<!-- third-generation iPad with high-resolution Retina display: -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="path/to/favicon144.png">
+<!-- iPhone with high-resolution Retina display: -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="path/to/favicon114.png">
+<!-- first- and second-generation iPad: -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="path/to/favicon72.png">
+<!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+<link rel="apple-touch-icon-precomposed" href="path/to/favicon57.png">
+<!-- basic favicon -->
+<link rel="shortcut icon" href="path/to/favicon32.png">
+
+<!-- For live -->
+<!-- compressed files go here -->
+    
+<!-- For development -->
+<link rel="stylesheet" href="/css/default.css" media="all">
+<script type="text/javascript" src="/js/modernizr-complete.js"></script>
+<script type="text/javascript" src="/js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="/js/hammer.min.js"></script>
+<script type="text/javascript" src="/js/jquery.debounce-1.0.5.js"></script>
+<script type="text/javascript" src="/js/default.jquery.js"></script>
+
+</head>
+
+<body>
+    <!-- For sites that will be centered on the screen -->
+        <%- body %>
+</body>
+<script src="lib/js/head.min.js"></script>
+<script>
+
+    head.js( '/js/jquery-1.7.2.min.js' ,'/socket.io/socket.io.js' , function() {
+        
+        // connect
+        var socket = io.connect('/');   
+        
+        socket.on('connect', function () {
+            console.log("controller connected.");
+            
+            $('.xmas_ornament').bind('click', function(){
+                // send command (up/down/left/right)
+                //var cmd = $(this).attr('cmd');
+                var cmd = 'cmd';
+                // which presentation should I control?
+               // var whichppt = $('#whichppt').val();
+               var whichppt = $('.xmas_ornament').css( "background-color" );;
+                
+                // send command to server
+                socket.emit('command', {'id' : whichppt, 'txt': cmd } );
+                
+            });
+        
+                
+        });
+        
+    } );
+    
+</script>
+
+
+</html>
+

@@ -1,0 +1,559 @@
+@charset "UTF-8";
+/***************************************************************************************************
+ *   default.css
+ *   CSS styles for  ________
+ *
+ *   @copyright      2014 DARE
+ *
+ *   @authors        Cindy Son, Technical Director <cindy.son@thisisdare.com>
+ *                   Gabrielle Carson, Front-End Developer <gabrielle.carson@thisisdare.com>
+ *                   Carolvie Ozar, Front-End Developer <carolvie.ozar@thisisdare.com>
+ *
+ *   @since          ________
+ *   @category       ________
+ *   @package       
+ *   @subpackage     CSS
+ * 
+ * TABLE OF CONTENTS
+ * 
+ * 01 - RESET
+ * 02 - FONTS
+ * 03 - HELPER CLASSES
+ * 04 - GLOBAL STYLES
+ * 05 - HEADER
+ * 06 - PAGE SPECIFIC
+ * 07 - FOOTER
+ * 08 - MEDIA QUERIES
+ ***************************************************************************************************/
+
+/* 01 - RESET & BOX SIZING
+ *	http://meyerweb.com/eric/tools/css/reset/ 
+ *   v2.0 | 20110126
+ *   License: none (public domain)
+ ***********************************************/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* apply a natural box layout model to all elements */
+*,
+*:after,
+*:before {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+/* 02 - FONTS
+***********************************************/
+
+
+/* 03 - HELPER CLASSES
+***********************************************/
+.clearfix {
+	clear: both;
+}
+
+.center {
+	margin: 0 auto;
+}
+
+.replace {
+	display: inline-block;
+	text-indent: -99%;
+}
+
+/* 04 - GLOBAL STYLES
+***********************************************/
+/* General */
+html {
+	height: 100%;
+}
+
+body {
+	font-family: 'Poiret One', cursive;
+	height: 100%;
+}
+
+.xmas_wrapper {
+	height: 100%;
+	max-width: 768px;
+	width: 100%;
+}
+
+.xmas_main_content {
+	height: 100%;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Playball', cursive;
+}
+
+a {
+	
+}
+
+/* Buttons */
+
+
+/* 05 - HEADER
+***********************************************/
+
+
+/* 06 - PAGE SPECIFIC
+***********************************************/
+/* Home */
+.xmas_tree_cont {
+	height: 50%;
+	max-height: 500px;
+	position: relative;
+}
+
+/*#xmas_tree {
+	max-height: 100%;
+	height: 100%;
+	width: 100%;
+}*/
+
+#xmas_tree {
+	background: url("../images/decorations/xmas-tree.png") no-repeat center top;
+	background-size: contain;
+	height: 100%;
+	width: 100%;
+}
+
+.xmas_circle {
+	border-radius: 30px;
+	height: 30px;
+	position: absolute;
+	width: 30px;
+
+	-webkit-box-shadow: 0 0 10px #f3f3f3;
+	-moz-box-shadow: 0 0 10px #f3f3f3;
+	box-shadow: 0 0 10px #f3f3f3;
+}
+
+.xmas_outer_glow {
+	-webkit-animation: blinking-outer-glow 2s infinite;
+	-moz-animation: blinking-outer-glow 2s infinite;
+	-ms-animation: blinking-outer-glow 2s infinite;
+	-o-animation: blinking-outer-glow 2s infinite;
+	animation: blinking-outer-glow 2s infinite;
+}
+
+#xmas_circle1 {
+	background: #FCEE43;
+	left: 45%;
+	top: 20%;
+}
+
+#xmas_circle2 {
+	background: #F41414;
+	left: 35%;
+	top: 40%;
+}
+
+#xmas_circle3 {
+	background: #31A9E0;
+	left: 55%;
+	top: 50%;
+}
+
+#xmas_circle4 {
+	background: #35A31D;
+	left: 30%;
+	top: 70%;
+}
+
+#xmas_circle5 {
+	background: #F4AC2E;
+	left: 65%;
+	top: 80%;
+}
+
+.xmas_inner_circle {
+	height: 80%;
+	left: 10%;
+	position: absolute;
+	top: 10%;
+	width: 80%;
+	
+	-moz-border-radius: 45px;
+	-webkit-border-radius: 45px;
+	border-radius: 45px;
+	-webkit-box-shadow: 0 0 10px #f3f3f3;
+	-moz-box-shadow: 0 0 10px #f3f3f3;
+	box-shadow: 0 0 10px #f3f3f3;
+}
+
+.xmas_inner_glow {
+	-webkit-animation: blinking-inner-glow 2s infinite;
+	-moz-animation: blinking-inner-glow 2s infinite;
+	-ms-animation: blinking-inner-glow 2s infinite;
+	-o-animation: blinking-inner-glow 2s infinite;
+	animation: blinking-inner-glow 2s infinite;
+}
+
+@-ms-keyframes blinking-outer-glow {
+	0%, 100% {
+		-moz-box-shadow: 0 0 10px #ffeccf;
+		-webkit-box-shadow: 0 0 10px #ffeccf;
+		box-shadow: 0 0 10px #ffeccf;
+	}
+	
+	50% {
+		-moz-box-shadow: 0 0 30px #c8ffc9;
+		-webkit-box-shadow: 0 0 30px #c8ffc9;
+		box-shadow: 0 0 30px #c8ffc9;
+	}
+}
+
+@-o-keyframes blinking-outer-glow {
+	0%, 100% {
+		-moz-box-shadow: 0 0 10px #ffeccf;
+		-webkit-box-shadow: 0 0 10px #ffeccf;
+		box-shadow: 0 0 10px #ffeccf;
+	}
+	
+	50% {
+		-moz-box-shadow: 0 0 30px #c8ffc9;
+		-webkit-box-shadow: 0 0 30px #c8ffc9;
+		box-shadow: 0 0 30px #c8ffc9;
+	}
+}
+
+@-webkit-keyframes blinking-outer-glow {
+	0%, 100% {
+		-moz-box-shadow: 0 0 10px #ffeccf;
+		-webkit-box-shadow: 0 0 10px #ffeccf;
+		box-shadow: 0 0 10px #ffeccf;
+	}
+	
+	50% {
+		-moz-box-shadow: 0 0 30px #c8ffc9;
+		-webkit-box-shadow: 0 0 30px #c8ffc9;
+		box-shadow: 0 0 30px #c8ffc9;
+	}
+}
+
+@-moz-keyframes blinking-outer-glow {
+	0%, 100% {
+		-moz-box-shadow: 0 0 10px #ffeccf;
+		-webkit-box-shadow: 0 0 10px #ffeccf;
+		box-shadow: 0 0 10px #ffeccf;
+	}
+	
+	50% {
+		-moz-box-shadow: 0 0 30px #c8ffc9;
+		-webkit-box-shadow: 0 0 30px #c8ffc9;
+		box-shadow: 0 0 30px #c8ffc9;
+	}
+}
+
+@keyframes blinking-outer-glow {
+	0%, 100% {
+		-moz-box-shadow: 0 0 10px #ffeccf;
+		-webkit-box-shadow: 0 0 10px #ffeccf;
+		box-shadow: 0 0 10px #ffeccf;
+	}
+	
+	50% {
+		-moz-box-shadow: 0 0 30px #c8ffc9;
+		-webkit-box-shadow: 0 0 30px #c8ffc9;
+		box-shadow: 0 0 30px #c8ffc9;
+	}
+}
+
+@-ms-keyframes blinking-inner-glow {
+	0%, 100% {
+		-moz-box-shadow: 0 0 10px #ffeccf;
+		-webkit-box-shadow: 0 0 10px #ffeccf;
+		box-shadow: 0 0 10px #ffeccf;
+	}
+	
+	50% {
+		-moz-box-shadow: 0 0 30px #c8ffc9;
+		-webkit-box-shadow: 0 0 30px #c8ffc9;
+		box-shadow: 0 0 30px #c8ffc9;
+	}
+}
+
+@-o-keyframes blinking-inner-glow {
+	0%, 100% {
+		-moz-box-shadow: 0 0 10px #ffeccf;
+		-webkit-box-shadow: 0 0 10px #ffeccf;
+		box-shadow: 0 0 10px #ffeccf;
+	}
+	
+	50% {
+		-moz-box-shadow: 0 0 30px #c8ffc9;
+		-webkit-box-shadow: 0 0 30px #c8ffc9;
+		box-shadow: 0 0 30px #c8ffc9;
+	}
+}
+
+@-webkit-keyframes blinking-inner-glow {
+	0%, 100% {
+		-moz-box-shadow: 0 0 10px #ffeccf;
+		-webkit-box-shadow: 0 0 10px #ffeccf;
+		box-shadow: 0 0 10px #ffeccf;
+	}
+	
+	50% {
+		-moz-box-shadow: 0 0 30px #c8ffc9;
+		-webkit-box-shadow: 0 0 30px #c8ffc9;
+		box-shadow: 0 0 30px #c8ffc9;
+	}
+}
+
+@-moz-keyframes blinking-inner-glow {
+	0%, 100% {
+		-moz-box-shadow: 0 0 10px #ffeccf;
+		-webkit-box-shadow: 0 0 10px #ffeccf;
+		box-shadow: 0 0 10px #ffeccf;
+	}
+	
+	50% {
+		-moz-box-shadow: 0 0 30px #c8ffc9;
+		-webkit-box-shadow: 0 0 30px #c8ffc9;
+		box-shadow: 0 0 30px #c8ffc9;
+	}
+}
+
+@keyframes blinking-inner-glow {
+	0%, 100% {
+		-moz-box-shadow: 0 0 10px #ffeccf;
+		-webkit-box-shadow: 0 0 10px #ffeccf;
+		box-shadow: 0 0 10px #ffeccf;
+	}
+	
+	50% {
+		-moz-box-shadow: 0 0 30px #c8ffc9;
+		-webkit-box-shadow: 0 0 30px #c8ffc9;
+		box-shadow: 0 0 30px #c8ffc9;
+	}
+}
+
+/* Christmas Ornaments */
+.xmas_ornament_cont {
+	border: 5px solid #ccc;
+	height: 50%;
+	max-height: 500px;
+	padding: 20px;
+	position: relative;
+	width: 100%;
+}
+
+.xmas_ornament {
+	border-radius: 50px;
+	height: 50px;
+	left: 50%;
+	margin-left: -25px;
+	margin-top: -25px;
+	position: absolute;
+	top: 50%;
+	width: 50px;
+
+	-webkit-box-shadow: 0 0 10px #f3f3f3;
+	-moz-box-shadow: 0 0 10px #f3f3f3;
+	box-shadow: 0 0 10px #f3f3f3;
+}
+
+.animated {
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+
+@-webkit-keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+
+  80% {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    -ms-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+
+  80% {
+    -webkit-transform: translateY(10px);
+    -ms-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.bounceInUp {
+  -webkit-animation-name: bounceInUp;
+  animation-name: bounceInUp;
+}
+
+@-webkit-keyframes bounceOut {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  25% {
+    -webkit-transform: scale(.95);
+    transform: scale(.95);
+  }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(.3);
+    transform: scale(.3);
+  }
+}
+
+@-webkit-keyframes bounceOutUp {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+}
+
+@keyframes bounceOutUp {
+  0% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+}
+
+.bounceOutUp {
+  -webkit-animation-name: bounceOutUp;
+  animation-name: bounceOutUp;
+}
+/* 07 - FOOTER
+***********************************************/
+
+/* 08 - MEDIA QUERIES
+************************************************/
+/* Portrait of common small mobile devices */
+@media screen and (max-width: 360px) and (orientation: portrait) {
+
+}
+
+/* Landscape of common small mobile devices */
+@media screen and (max-width: 640px) and (orientation: landscape) {
+
+}
+
+/* Portrait of common tablet devices */
+@media screen and (min-width: 641px) and (orientation: portrait) {
+
+}
+
+/* Landscape of common tablet devices */
+@media screen and (min-width: 641px) and (orientation: landscape) {
+
+}

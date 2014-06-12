@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Prototype 3 | Make Christmas Tree Decoration Fun!</title>
+<meta name="description" content="A description of the page.">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+<!-- Sets whether a web application runs in full-screen mode. -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<!-- Use this to enable media queries and disable zoomimg on mobile -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<!-- Enable search engine to index this page and follow links, replace with no-index or no-follow to disable -->
+<meta name="robots" content="index, follow">
+
+<!-- third-generation iPad with high-resolution Retina display: -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="path/to/favicon144.png">
+<!-- iPhone with high-resolution Retina display: -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="path/to/favicon114.png">
+<!-- first- and second-generation iPad: -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="path/to/favicon72.png">
+<!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+<link rel="apple-touch-icon-precomposed" href="path/to/favicon57.png">
+<!-- basic favicon -->
+<link rel="shortcut icon" href="path/to/favicon32.png">
+
+<!-- For live -->
+<!-- compressed files go here -->
+    
+<!-- For development -->
+<link rel="stylesheet" href="/css/default.css" media="all">
+<script type="text/javascript" src="/js/modernizr-complete.js"></script>
+<script type="text/javascript" src="/js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="/js/hammer.min.js"></script>
+<script type="text/javascript" src="/js/jquery.debounce-1.0.5.js"></script>
+<script type="text/javascript" src="/js/default.jquery.js"></script>
+
+</head>
+
+<body>
+    <!-- For sites that will be centered on the screen -->
+    <div class="xmas_wrapper center">
+        <div class="xmas_main_content">
+            <div class="xmas_tree_cont">
+                <div id="xmas_tree">
+                    <div class="xmas_circle xmas_outer_glow" id="xmas_circle1">
+                        <div class="xmas_inner_circle xmas_inner_glow"></div>
+                    </div>
+                    <div class="xmas_circle xmas_outer_glow" id="xmas_circle2">
+                        <div class="xmas_inner_circle xmas_inner_glow"></div>
+                    </div>
+                    <div class="xmas_circle xmas_outer_glow" id="xmas_circle3">
+                        <div class="xmas_inner_circle xmas_inner_glow"></div>
+                    </div>
+                    <div class="xmas_circle xmas_outer_glow" id="xmas_circle4">
+                        <div class="xmas_inner_circle xmas_inner_glow"></div>
+                    </div>
+                    <div class="xmas_circle xmas_outer_glow" id="xmas_circle5">
+                        <div class="xmas_inner_circle xmas_inner_glow"></div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="xmas_ornament_cont center" id="js_xmas_ornament_cont" style="border:none;">
+                              
+                <div class="xmas_ornament js_xmas_ornament animated" ></div>
+             </div>
+        </div>
+        <div id="is_controller">no</div>
+        <footer class="xmas_main_footer">
+            
+        </footer>
+    </div>
+<!-- Optional libraries for code syntax highlighting and classList support in IE9 -->
+<script src="/lib/js/head.min.js"></script>
+
+<script>
+ function removeGlow(newcolor) {
+ 	
+	jQuery(".xmas_circle.xmas_outer_glow").each(function() {
+		var current_circle = jQuery(this);
+		var bgcolor = current_circle.css("background-color");
+		
+ 
+		if ( bgcolor == newcolor) {
+			//alert('remove');
+            current_circle.removeClass("xmas_outer_glow");
+            current_circle.find(".xmas_inner_circle").removeClass("xmas_inner_glow");
+ 		}
+	});
+}
+   
+
+    head.js( '/socket.io/socket.io.js' , function() {
+        
+        // connect
+        var socket = io.connect('/');   
+        
+        socket.on('connect', function () {
+            console.log("client connected. Sending cur slide request");
+            
+    
+            // on connect send presentation request
+            //socket.emit('request_presentation', {'id': presentation_id} );
+        
+            
+            
+            socket.on('updatedata', function(data) {
+                               
+                console.log("Receive update data: " + data);
+                ornament.css("background-color", data);
+                 setTimeout(function(){
+                   ornament.show();
+                   ornament.click();
+                 }, 500);
+                
+               
+                setTimeout(function(){
+                 removeGlow(data);
+                 }, 1200);
+                
+                               
+               
+            });
+            
+                       
+        
+        });
+        
+    } );
+    
+</script>
+    
+ 
+    
+</body>
+</html>
